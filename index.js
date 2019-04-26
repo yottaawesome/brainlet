@@ -1,20 +1,27 @@
-const eventSubscription = { }
-const eventStateData = {}
-
 function required(param="") {
     throw new Error(`A missing parameter was encountered ${param}`);
 }
 
 /**
- * Controls basic state and event handling for this application.
+ * Controls basic state and event handling.
  */
 class AppState {
+    constructor() {
+        this.eventSubscription = {};
+        this.eventStateData = {};
+        this.getStateData = this.getStateData.bind(this);
+        this.setStateData = this.setStateData.bind(this);
+        this.subscribe = this.subscribe.bind(this);
+        this.unsubscribe = this.unsubscribe.bind(this);
+        this.raiseEvent = this.raiseEvent.bind(this);
+    }
+    
     /**
      * Retrieves the data associated with the specified State.
      * @param {*} stateVariable The State data to retrieve.
      */
-    static getStateData(stateVariable) {
-        return eventStateData[stateVariable];
+    getStateData(stateVariable) {
+        return this.eventStateData[stateVariable];
     }
 
     /**
@@ -22,8 +29,8 @@ class AppState {
      * @param {*} stateVariable The State variable to set the data for.
      * @param {*} data The data to set.
      */
-    static setStateData(stateVariable, data) {
-        eventStateData[stateVariable] = data;
+    setStateData(stateVariable, data) {
+        this.eventStateData[stateVariable] = data;
     }
 
     /**
@@ -31,16 +38,15 @@ class AppState {
      * @param {*} obj Required. The object to subscribe.
      * @param  {...any} args Required. A list of one or more Events to subscribe the object to.
      */
-    static subscribe(obj = required("obj"), ...args) {
+    subscribe(obj = required("obj"), ...args) {
         if(args.length == 0)
             throw "objs cannot be null, and at least one arg must be specified";
 
         for(const eventName of args) {
-			if(eventSubscription[eventName] == null)
-				eventSubscription[eventName] = []
-            if(eventSubscription[eventName].find(o => o == obj) == null) {
-                eventSubscription[eventName].push(obj);
-            }
+			if(this.eventSubscription[eventName] == null)
+                this.eventSubscription[eventName] = []
+            if(this.eventSubscription[eventName].find(o => o == obj) == null)
+                this.eventSubscription[eventName].push(obj);
         }
     }
 
@@ -49,19 +55,19 @@ class AppState {
      * @param {*} obj Required. The object to unsubscribe.
      * @param  {...any} args Optional. The Events to unsubscribe from. If this parameter is empty, the object is unsubscribed from all Events.
      */
-    static unsubscribe(obj = required("obj"), ...args) {
+    unsubscribe(obj = required("obj"), ...args) {
         // args is never null
         if(args.length > 0) {
             for(const eventName of args) {
-                if(eventSubscription[eventName] != null) {
-                    eventSubscription[eventName] = eventSubscription[eventName].filter((val, index, arr) => val != obj);
+                if(this.eventSubscription[eventName] != null) {
+                    this.eventSubscription[eventName] = this.eventSubscription[eventName].filter((val, index, arr) => val != obj);
                     console.log(`Unsubscribed an object for event ${eventName}.`)
                 }
             }
         } else {
             let arr = Object.values(Events);
             for(const eventArrayName of arr) {
-                eventSubscription[eventArrayName] = eventSubscription[eventArrayName].filter((val, index, arr) => val != obj);
+                this.eventSubscription[eventArrayName] = this.eventSubscription[eventArrayName].filter((val, index, arr) => val != obj);
             }
             console.log(`Globally unsubscribed an object.`)
         }
@@ -72,8 +78,8 @@ class AppState {
      * @param {*} event Required. The Event to raise.
      * @param {*} data Optional. The data associated with the Event to raise.
      */
-    static raiseEvent(event = required("event"), data) {
-        for(const objToInvoke of eventSubscription[event]) {
+    raiseEvent(event = required("event"), data) {
+        for(const objToInvoke of this.eventSubscription[event]) {
             if(objToInvoke != null) {
                 if(objToInvoke[event] != null) // for objects
                     objToInvoke[event](event, data);

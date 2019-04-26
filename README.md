@@ -25,12 +25,15 @@ class Subscriber {
 
 let objToSubscribe = new Subscriber();
 
+// this can be a global or be more localised
+appState = new AppState();
+
 // subscribe to an event
-AppState.subscribe(objToSubscribe, events.LOGIN);
+appState.subscribe(objToSubscribe, events.LOGIN);
 
 // raise an event
-AppState.raiseEvent(events.LOGIN, { name: 'Jean Baudrillard' });
+appState.raiseEvent(events.LOGIN, { name: 'Jean Baudrillard' });
 
 // clean up
-AppState.unsubscribe(objToSubscribe);
+appState.unsubscribe(objToSubscribe);
 ```
