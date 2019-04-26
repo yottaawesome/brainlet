@@ -26,7 +26,7 @@ class Subscriber {
 let objToSubscribe = new Subscriber();
 
 // this can be a global or be more localised
-appState = new AppState();
+let appState = new AppState();
 
 // subscribe to an event
 appState.subscribe(objToSubscribe, events.LOGIN);
