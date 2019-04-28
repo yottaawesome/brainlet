@@ -1,6 +1,6 @@
 {
   "name": "brainlet",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple state and event engine for JS web apps.",
   "main": "index.js",
   "scripts": {
