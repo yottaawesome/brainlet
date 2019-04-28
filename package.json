@@ -7,7 +7,8 @@
     "dev": "webpack --mode=development",
     "prod": "webpack --mode=production",
     "dev-watch": "webpack --mode=development --watch",
-    "prod-watch": "webpack --mode=production --watch"
+    "prod-watch": "webpack --mode=production --watch",
+    "test": "webpack --config=webpack.test.config --mode=development"
   },
   "repository": {
     "type": "git",
