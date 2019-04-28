@@ -37,3 +37,7 @@ appState.raiseEvent(events.LOGIN, { name: 'Jean Baudrillard' });
 // clean up
 appState.unsubscribe(objToSubscribe);
 ```
+
+## TODO
+
+Add a proper unit testing framework to replace the crude one in place.
