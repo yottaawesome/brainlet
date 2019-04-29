@@ -9,9 +9,9 @@ module.exports = (env, argv) => {
   let isDevelopment = (process.env.NODE_ENV = argv['mode']) !== 'production'
 
   return {
-    entry: './index.js',
+    entry: './src/index.js',
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'lib'),
       filename: 'index.js'
     },
     module: {
