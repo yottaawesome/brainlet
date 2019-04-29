@@ -1,6 +1,6 @@
 {
   "name": "brainlet",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple state and event engine for JS web apps.",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "dev-watch": "webpack --mode=development --watch",
     "prod-watch": "webpack --mode=production --watch",
     "test": "webpack --config=webpack.test.config --mode=development",
-    "prepublish": "webpack --mode=production"
+    "prepublish": "webpack --mode=development"
   },
   "files": [
     "/lib",

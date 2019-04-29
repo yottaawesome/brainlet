@@ -12,7 +12,9 @@ module.exports = (env, argv) => {
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'lib'),
-      filename: 'index.js'
+      filename: 'index.js',
+      library: 'brainlet',
+      libraryTarget: 'umd'
     },
     module: {
       rules: [
