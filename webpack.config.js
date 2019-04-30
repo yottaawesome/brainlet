@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, 'lib'),
       filename: 'index.js',
-      library: 'brainlet',
+      library: 'brainlet', //https://webpack.js.org/guides/author-libraries/#expose-the-library
       libraryTarget: 'umd'
     },
     module: {
