@@ -12,9 +12,7 @@
     "prepublish": "webpack --mode=development"
   },
   "files": [
-    "/lib",
-    "README.md",
-    "LICENSE"
+    "/lib"
   ],
   "repository": {
     "type": "git",
