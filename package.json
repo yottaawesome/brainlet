@@ -9,7 +9,7 @@
     "dev-watch": "webpack --mode=development --watch",
     "prod-watch": "webpack --mode=production --watch",
     "test": "webpack --config=webpack.test.config --mode=development",
-    "prepublish": "webpack --mode=development"
+    "prepublishOnly": "webpack --mode=development"
   },
   "files": [
     "/lib"
@@ -28,7 +28,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.6",
-    "webpack": "^4.32.0",
+    "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   }
 }
