@@ -2,6 +2,10 @@
 
 A low-level simple state dictionary and event engine for JS web apps.
 
+## Status
+
+This project is being continually maintained.
+
 ## Installing
 
 `npm i brainlet --save`
