@@ -66,4 +66,4 @@ Add a proper unit testing framework to replace the crude one in place.
 
 <hr />
 
-<sup>1<sup> As of [16.1.0](https://reactjs.org/blog/2018/03/29/react-v-16-3.html), provides a new and stable `context` API that allows sharing of data between components, and you should consider using this. Don't add Redux for component communication; Redux's use case is complex global state management, not inter-component communication. There's an important distinction there that is often misunderstood.
+<sup>1</sup> As of [16.1.0](https://reactjs.org/blog/2018/03/29/react-v-16-3.html), provides a new and stable `context` API that allows sharing of data between components, and you should consider using this. Don't add Redux for component communication; Redux's use case is complex global state management, not inter-component communication. There's an important distinction there that is often misunderstood.
