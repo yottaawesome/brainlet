@@ -1,6 +1,8 @@
 # brainlet
 
-A low-level simple state dictionary and event engine for JS web apps.
+## Introduction
+
+A low-level simple state dictionary and event engine for JS web apps. `brainlet` is intended to easily facilitate communication between components for small-scale or medium-scale component-based SPAs (like React<sup>1</sup>) using a simple subscriber/publisher model. `brainlet` can also be used to store application state using the `AppState.setStateData()` and `AppState.getStateData()` functions.
 
 ## Status
 
@@ -9,10 +11,6 @@ This project is being continually maintained.
 ## Installing
 
 `npm i brainlet --save`
-
-## Rationale
-
-`brainlet` is intended to easily facilitate communication between components for small-scale or medium-scale component-based SPAs (like React<sup>1</sup>) using a simple subscriber/publisher model. `brainlet` can also be used to store application state using the `AppState.setStateData()` and `AppState.getStateData()` functions.
 
 ## Basic use
 
