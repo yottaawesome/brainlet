@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/yottaawesome/brainlet.svg?branch=master)](https://travis-ci.org/yottaawesome/brainlet)
+
 # brainlet
 
 ## Introduction
