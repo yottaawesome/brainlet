@@ -4,11 +4,10 @@
   "description": "A simple state and event engine for JS web apps.",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "webpack --mode=development",
-    "prod": "webpack --mode=production",
-    "dev-watch": "webpack --mode=development --watch",
-    "prod-watch": "webpack --mode=production --watch",
-    "test": "webpack --config=webpack.test.config --mode=development",
+    "build-dev": "webpack --mode=development",
+    "build-prod": "webpack --mode=production",
+    "start": "webpack --mode=development --watch",
+    "test": "",
     "prepublishOnly": "webpack --mode=development"
   },
   "files": [
@@ -29,6 +28,6 @@
     "@babel/preset-env": "^7.6.0",
     "babel-loader": "^8.0.6",
     "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.9"
   }
 }
