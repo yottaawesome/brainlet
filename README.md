@@ -1,6 +1,8 @@
 # brainlet
 
-A low-level simple state dictionary and event engine for JS web apps.
+## Introduction
+
+A low-level simple state dictionary and event engine for JS web apps. `brainlet` is intended to easily facilitate communication between components for small-scale or medium-scale component-based SPAs (like React<sup>1</sup>) using a simple subscriber/publisher model. `brainlet` can also be used to store application state using the `AppState.setStateData()` and `AppState.getStateData()` functions.
 
 ## Status
 
@@ -9,10 +11,6 @@ This project is being continually maintained.
 ## Installing
 
 `npm i brainlet --save`
-
-## Rationale
-
-`brainlet` is intended to easily facilitate communication between components using a simple subscriber/publisher model. It is particularly effective for small scale SPAs in which something like `redux` simply adds too much complexity, but where components still need to communicate without having to pass props through a deeply nested hierarchy. `brainlet` can also be used to store application state using the `AppState.setStateData()` and `AppState.getStateData()` functions.
 
 ## Basic use
 
@@ -63,3 +61,7 @@ appState.unsubscribe(objToSubscribe);
 ## TODO
 
 Add a proper unit testing framework to replace the crude one in place.
+
+<hr />
+
+<sup>1</sup> As of [16.3.0](https://reactjs.org/blog/2018/03/29/react-v-16-3.html), provides a new and stable `context` API that allows sharing of data between components, and you should consider using this. Don't add Redux for component communication; Redux's use case is robust, scalable and predictable management for complex global application state, not inter-component communication. There's an important distinction in those two concepts there that is often misunderstood.
