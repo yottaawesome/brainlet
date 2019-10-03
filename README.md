@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/yottaawesome/brainlet.svg?branch=master)](https://travis-ci.org/yottaawesome/brainlet)
+[![Build Status](https://travis-ci.org/yottaawesome/brainlet.svg?branch=master)](https://travis-ci.org/yottaawesome/brainlet) ![Dependencies](https://david-dm.org/yottaawesome/brainlet.svg) ![Dev-Dependencies](https://david-dm.org/yottaawesome/brainlet/dev-status.svg)
 
 # brainlet
 
