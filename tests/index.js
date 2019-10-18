@@ -1,1 +1,1 @@
-export {AppStateTests} from './appstate-tests';
+export { AppStateTests } from './appstate-tests';
