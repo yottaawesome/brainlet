@@ -31,6 +31,9 @@ function subscriber(eventName, data) {
 brainlet.subscribe(eventNames.SomeEvent, subscriber);
 brainlet.invokeEvent(eventNames.SomeEvent, { message: 'Hooray' });
 brainlet.unsubscribe(eventNames.SomeEvent, subscriber);
+
+// brainlet caches event data, which can be retrieved as follows
+const someEvent = brainlet.getCachedEventData(eventNames.SomeEvent);
 ```
 
 ## NPM commands
