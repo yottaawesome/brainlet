@@ -4,12 +4,15 @@ const cachedEventData = {};
 /*
  * Subscribes a callback to an event. The callback receives the event name and the data.
  * @param {string} event The event name to subscribe to.
- * @param {()=>(eventName:string, data)} callback The callback to invoke when the event is raised.
+ * @param {()=>(eventName:string, data)} callback The callback to invoke when the event is raised. Must be a function.
  * The callback will receive the event name and the event data in its arguments respectively.
  */
 export function subscribe(event, callback) {
   if(!subscriptions[event])
     subscriptions[event] = [];
+  if(typeof callback !== 'function')
+    throw new Error('Only functions can be used as callbacks.');
+
   const subsList = subscriptions[event];
   if(!subsList.some(subbedCallback => subbedCallback === callback))
     subsList.push(callback);

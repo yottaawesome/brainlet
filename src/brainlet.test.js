@@ -44,3 +44,7 @@ test('getCachedEventData() returns correct data', () => {
   
   expect(brainlet.getCachedEventData(eventName)).toBe(3);
 });
+
+test('subscribe() fails on non-function callbacks', () => {
+  expect(() => brainlet.subscribe('testEventName', 1)).toThrow(Error);
+});
