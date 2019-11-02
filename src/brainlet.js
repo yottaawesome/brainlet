@@ -19,14 +19,18 @@ export function subscribe(event, callback) {
  * Unsubscribes a callback from an event.
  * @param {string} event The event name to subscribe to.
  * @param {()=>(eventName:string, data)} callback The callback to invoke when the event is raised.
+ * @returns {boolean} Returns true if a matching handler was removed, false otherwise.
  */
 export function unsubscribe(event, callback) {
   if(!subscriptions[event])
     return;
 
-  const indexToRemove = subscriptions[event].indexOf(value => value === callback);
-  if(indexToRemove > 0)
+  const indexToRemove = subscriptions[event].indexOf(callback);
+  if(indexToRemove > 0) {
     subscriptions[event].splice(indexToRemove, 1);
+    return true;
+  }
+  return false;
 }
 
 /**
