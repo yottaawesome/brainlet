@@ -33,6 +33,12 @@ brainlet.invokeEvent(eventNames.SomeEvent, { message: 'Hooray' });
 brainlet.unsubscribe(eventNames.SomeEvent, subscriber);
 ```
 
-## TODO
+## NPM commands
 
-Add a proper unit testing framework to replace the crude one in place.
+The following can be run with `npm run`.
+
+* `build-dev`: Build the development version of `brainlet`.
+* `build-prod`: Build the production version of `brainlet`.
+* `start`: Runs webpack in watch mode.
+* `test`: Lints the code.
+* `lint`: Lints the code.
