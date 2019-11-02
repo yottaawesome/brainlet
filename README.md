@@ -46,5 +46,5 @@ The following can be run with `npm run`.
 * `build-dev`: Build the development version of `brainlet`.
 * `build-prod`: Build the production version of `brainlet`.
 * `start`: Runs webpack in watch mode.
-* `test`: Lints the code.
+* `test`: Runs the tests.
 * `lint`: Lints the code.

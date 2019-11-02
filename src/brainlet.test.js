@@ -1,13 +1,5 @@
 import brainlet from '.';
 
-test('subscribe() and unsubscribe() do not throw errors', () => {
-  const sub = () => {};
-  const eventName = 'testEventName';
-
-  expect(() => brainlet.subscribe(eventName, sub)).not.toThrow();
-  expect(() => brainlet.unsubscribe(eventName, sub)).not.toThrow();
-});
-
 test('invoke() works correctly', () => {
   let counter = 0;
   const eventName = 'testEventName';
