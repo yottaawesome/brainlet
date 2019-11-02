@@ -4,7 +4,7 @@
 
 ## Introduction
 
-A low-level simple event engine for JS web apps. This is version 2.0.0 of `brainlet`, which will soon replace version 1.x.x, which is the current NPM version.
+A low-level simple event engine for JS web apps.
 
 ## Status
 
