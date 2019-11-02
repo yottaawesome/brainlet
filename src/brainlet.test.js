@@ -1,5 +1,4 @@
-import 'jest';
-import brainlet from './brainlet';
+import brainlet from '.';
 
 test('subscribe() and unsubscribe() do not throw errors', () => {
   const sub = () => {};

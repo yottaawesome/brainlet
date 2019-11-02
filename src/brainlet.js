@@ -59,10 +59,3 @@ export function invokeEvent(event, data) {
 export function getCachedEventData(event) {
   return cachedEventData[event] === undefined ? null : cachedEventData[event];
 }
-
-export default {
-  subscribe: subscribe,
-  unsubscribe: unsubscribe,
-  invokeEvent: invokeEvent,
-  getCachedEventData: getCachedEventData
-};
