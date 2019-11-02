@@ -24,15 +24,18 @@ const eventNames = {
     SomeEvent: 'SomeEvent'
 };
 
+// This is a basic subscriber function
 function subscriber(eventName, data) {
     console.log(eventName);
 }
 
+// Subscribe the above function
 brainlet.subscribe(eventNames.SomeEvent, subscriber);
+// Raise an event. This will call all subscribers for the SomeEvent event
 brainlet.invokeEvent(eventNames.SomeEvent, { message: 'Hooray' });
+// Don't forget to unsubscribe and clean up when you're done
 brainlet.unsubscribe(eventNames.SomeEvent, subscriber);
-
-// brainlet caches event data, which can be retrieved as follows
+// brainlet also caches event data, which can be retrieved as follows
 const someEvent = brainlet.getCachedEventData(eventNames.SomeEvent);
 ```
 
