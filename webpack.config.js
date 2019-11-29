@@ -1,4 +1,5 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
   // We need to set this manually due to https://github.com/webpack/webpack/issues/7074
@@ -10,12 +11,14 @@ module.exports = (env, argv) => {
 
   return {
     entry: './src/index.js',
+
     output: {
       path: path.resolve(__dirname, 'lib'),
       filename: 'index.js',
       library: 'brainlet', // https://webpack.js.org/guides/author-libraries/#expose-the-library
       libraryTarget: 'umd'
     },
+    
     module: {
       rules: [
         {
@@ -29,6 +32,10 @@ module.exports = (env, argv) => {
           }
         }
       ]
-    }
+    },
+
+    plugins: [
+      new CleanWebpackPlugin()
+    ],
   };
 };
